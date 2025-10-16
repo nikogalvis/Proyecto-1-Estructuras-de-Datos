@@ -1,5 +1,5 @@
 #include <iostream>
-#include "SongBank.cpp"
+#include "SongBank.cpp" //Esto es simplemente para indicar que, en caso de hacerse por módulos, debe importar SongBank de SongBank.cpp
 
 class Playlist {
 private:
@@ -105,3 +105,4 @@ public:
         }
     }
 };
+
