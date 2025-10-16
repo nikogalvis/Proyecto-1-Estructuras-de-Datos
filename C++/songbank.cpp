@@ -13,6 +13,7 @@ class Song{
     std::string name;
     std::string artist;
     int duration; //? La duración la plantee para que sean segundos (Lo cambio?) */
+    //Angel - Nah, creo que está bien, así no nos complicamos
     std::string genre;
   
   public:
@@ -42,6 +43,7 @@ class Song{
   };
 
   //* Este es el equivalente del __str__ creo, para que lo veamos en prints*/
+  //También puede ser útil para llevar la cuerda de hasta donde funciona todo si ocurre algo inesperado
   void info() const{
     std::cout<<"Name: "<< name << ", Author(s): " << artist << ", Genre: "<< genre << std::endl;
   };
@@ -120,3 +122,4 @@ int main() {
 
     return 0;
 }
+
