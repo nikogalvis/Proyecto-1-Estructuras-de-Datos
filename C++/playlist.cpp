@@ -25,12 +25,11 @@ public:
     Playlist() : head(nullptr), size(0) {}
 
     bool inSongBank(std::string song, const Songbank& sb) {
-        s = False;
         for(i = 0; i < sb.songs.size(); i++){
             if(song == sb.songs[i].getName()){
-                s = True;
+                return True;
             }
-        return s;
+        return False;
         }
     }
 
@@ -151,6 +150,7 @@ public:
         }
     }
 };
+
 
 
 
