@@ -24,6 +24,10 @@ public:
     // Se crea una playlist nueva (cabeza nula y tamaño 0)
     Playlist() : head(nullptr), size(0) {}
 
+    bool inSongBank(const Song& song) {
+        return song in Songbank;
+    }
+
     // ¿La cabeza tiene un valor nulo? Sí/No
     bool isEmpty() const {
         return head == nullptr;
@@ -141,5 +145,6 @@ public:
         }
     }
 };
+
 
 
