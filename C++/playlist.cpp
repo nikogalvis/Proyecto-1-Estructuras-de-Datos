@@ -57,6 +57,7 @@ public:
                 while (temp->next != nullptr)
                     temp = temp->next;
                 temp->next = newNode;
+                newNode->prev = temp;
             }
             size++;
             std::cout << "Se añadió '" << song.getName() << "' a la playlist.\n";
@@ -130,19 +131,27 @@ public:
     }
 
     void goBack(const std::string& name) const{
-        if(isEmpty()){
-            std::cout << "La playlist está vacía.\n";
-            return;
-        };
-        
         Node* temp = head;
-        Node* act = name;
-        int i = 0;
-        while (temp != name) {
+        while (temp && temp->data.getName() != name) {
             temp = temp->next;
-            i++;
+        if(temp->prev){
+            temp->prev->data.info();
+        } else {
+            std::cout << "No hay una canción anterior.\n";
+        }
     }
 
+    void goForward(const std::string& name) const{
+        Node* temp = head;
+        while (temp && temp->data.getName() != name) {
+            temp = temp->next;
+        if(temp->next){
+            temp->next->data.info();
+        } else {
+            std::cout << "No hay una canción siguiente.\n";
+        }
+    }
+        
     /* Esto es prácticamente lo mismo que la función showPlaylist, con la única diferencia de que
     busca simular de forma muy básica a un "Reproducir" por medio de un mensaje que lo indica. */
     void playAll() const {
@@ -152,7 +161,8 @@ public:
         }
         Node* temp = head;
         while (temp != nullptr) {
-            std::cout << "🎧 Reproduciendo: ";
+            std::cout << "Reproduciendo la canción: ";
+            
             temp->data.info();
             temp = temp->next;
         }
