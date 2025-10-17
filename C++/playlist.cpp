@@ -12,7 +12,8 @@ private:
     struct Node {
         Song data;
         Node* next;
-        Node(const Song& _data) : data(_data), next(nullptr) {}
+        Node* prev;
+        Node(const Song& _data) : data(_data), next(nullptr), prev(nullptr) {}
     };
 
     // Apuntador a la cabeza y tamaño de la playlist
@@ -128,6 +129,20 @@ public:
         return size;
     }
 
+    void goBack(const std::string& name) const{
+        if(isEmpty()){
+            std::cout << "La playlist está vacía.\n";
+            return;
+        };
+        
+        Node* temp = head;
+        Node* act = name;
+        int i = 0;
+        while (temp != name) {
+            temp = temp->next;
+            i++;
+    }
+
     /* Esto es prácticamente lo mismo que la función showPlaylist, con la única diferencia de que
     busca simular de forma muy básica a un "Reproducir" por medio de un mensaje que lo indica. */
     void playAll() const {
@@ -155,6 +170,7 @@ public:
         }
     }
 };
+
 
 
 
