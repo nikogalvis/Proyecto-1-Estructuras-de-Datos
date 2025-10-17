@@ -43,18 +43,23 @@ public:
     Si no, crea un apuntador temporal que apunta a la cabeza actual y, mientras el nodo siguiente no tenga un valor nulo,
     reasigna temp a dicho nodo siguiente. Cuando se rompa esa condición, le asigna al nodo actual en su apuntador siguiente
     el nuevo nodo. Por último, incrementa el tamaño e imprime el mensaje confirmando que se añadió la canción indicada. */
-    void addSong(const Song& song) {
-        Node* newNode = new Node(song);
-        if (isEmpty()) {
-            head = newNode;
-        } else {
-            Node* temp = head;
-            while (temp->next != nullptr)
-                temp = temp->next;
-            temp->next = newNode;
+    void addSong(const Song& song, const Songbank& sb) {
+        if(!inSongBank(song, sb)){
+            std::cout << "La canción no se encuentra en el banco indicado" << endl;
+            return;
         }
-        size++;
-        std::cout << "Se añadió '" << song.getName() << "' a la playlist.\n";
+            Node* newNode = new Node(song);
+            if (isEmpty()) {
+                head = newNode;
+            } else {
+                Node* temp = head;
+                while (temp->next != nullptr)
+                    temp = temp->next;
+                temp->next = newNode;
+            }
+            size++;
+            std::cout << "Se añadió '" << song.getName() << "' a la playlist.\n";
+        }
     }
 
     /* Referencia al parámetro name como dato de tipo string constante.
@@ -150,6 +155,7 @@ public:
         }
     }
 };
+
 
 
 
