@@ -7,7 +7,7 @@ Se opta por recrear una aplicacion de reproduccion de canciones ya dadas por el 
 ## Clase Song
 Se parte de una clase "Song", siendo esta la base del programa, añadimos los atributos que consideramos pertinentes para la aplicación, de forma privada, puesto que no queremos que el usuario cambie estos atributos. Se definen los getters para poder ver esta información de manera individual. Por ultimo, se le añade el metodo "info" para poder ver la información de la canción, de manera organizada. 
 
-``` 
+``` C++
 class Song{
 
   private:
