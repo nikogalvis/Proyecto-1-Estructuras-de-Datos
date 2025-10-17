@@ -24,8 +24,14 @@ public:
     // Se crea una playlist nueva (cabeza nula y tamaño 0)
     Playlist() : head(nullptr), size(0) {}
 
-    bool inSongBank(const Song& song) {
-        return song in Songbank;
+    bool inSongBank(std::string song, Songbank& sb) {
+        s = False;
+        for(i = 0; i < sb.songs.size(); i++){
+            if(song == sb.songs[i].getName()){
+                s = True;
+            }
+        return s;
+        }
     }
 
     // ¿La cabeza tiene un valor nulo? Sí/No
@@ -145,6 +151,7 @@ public:
         }
     }
 };
+
 
 
 
