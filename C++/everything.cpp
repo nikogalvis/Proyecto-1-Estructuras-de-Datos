@@ -67,7 +67,7 @@ class SongBank{
 
   std::vector<Song> getSongs() const{
     return songs;
-  }
+  };
 
   void addSong(const Song& new_song){
     songs.push_back(new_song);
@@ -79,7 +79,7 @@ class SongBank{
         songs.erase(songs.begin() + i);
         std::cout << "Se elimino la cancion" << song << std::endl;  
           break;
-      }
+      };
   };
 
   void sortByName(){
@@ -93,13 +93,12 @@ class SongBank{
     if (songs.empty()) {
       std::cout << "There's no songs";
       return;
-    }
+    };
 
     for (int i = 0; i < songs.size(); i++){
       std::cout << i + 1 << " // ";
       songs[i].info();
     };
-    
   };
 };
 
@@ -133,15 +132,15 @@ public:
         for(int i = 0; i < sb.getSongs().size(); i++){
             if(song == sb.getSongs()[i].getName()){
                 return true;
-            }
+            };
         return false;
-        }
+        };
     };
 
     // ¿La cabeza tiene un valor nulo? Sí/No
     bool isEmpty() const {
         return head == nullptr;
-    }
+    };
 
     /* Referencia al parámetro song como atributo de Song, crea un nuevo nodo para dicha canción y le asigna un apuntador.
     Si la cabeza es un apuntador nulo, la nueva canción se convierte en la cabeza.
@@ -152,20 +151,21 @@ public:
         if(!inSongBank(song.getName(), sb)){
             std::cout << "La canción no se encuentra en el banco indicado";
             return;
-        }
+        };
             Node* newNode = new Node(song);
             if (isEmpty()) {
                 head = newNode;
             } else {
                 Node* temp = head;
-                while (temp->next != nullptr)
+                while (temp->next != nullptr){
                     temp = temp->next;
+                };
                 temp->next = newNode;
                 newNode->prev = temp;
-            }
+            };
             size++;
             std::cout << "Se añadió '" << song.getName() << "' a la playlist.\n";
-        }
+    };
     
 
     /* Referencia al parámetro name como dato de tipo string constante.
@@ -183,7 +183,7 @@ public:
         if (isEmpty()) {
             std::cout << "La playlist está vacía.\n";
             return;
-        }
+        };
 
         Node* temp = head;
         Node* prev = nullptr;
@@ -191,7 +191,7 @@ public:
         while (temp != nullptr && temp->data.getName() != name) {
             prev = temp;
             temp = temp->next;
-        }
+        };
 
         if (temp == nullptr) {
             std::cout << "No se encontró la canción '" << name << "'.\n";
@@ -218,7 +218,7 @@ public:
         if (isEmpty()) {
             std::cout << "La playlist está vacía.\n";
             return;
-        }
+        };
 
         Node* temp = head;
         int i = 1;
@@ -226,37 +226,37 @@ public:
             std::cout << i++ << ". ";
             temp->data.info();
             temp = temp->next;
-        }
-    }
+        };
+    };
 
     // ¿Debo explicar esto?
     int getSize() const {
         return size;
-    }
+    };
 
     void goBack(const std::string& name) const{
         Node* temp = head;
-        while (temp && temp->data.getName() != name) {
+        while (temp && temp->data.getName() != name){
             temp = temp->next;
+        };
         if(temp->prev){
             temp->prev->data.info();
         } else {
             std::cout << "No hay una canción anterior.\n";
-        }
-        }
-    }
+        };
+    };
 
     void goForward(const std::string& name) const{
         Node* temp = head;
         while (temp && temp->data.getName() != name) {
             temp = temp->next;
+        };
         if(temp->next){
             temp->next->data.info();
         } else {
             std::cout << "No hay una canción siguiente.\n";
-        }
-        }
-    }
+        };
+    };
         
     /* Esto es prácticamente lo mismo que la función showPlaylist, con la única diferencia de que
     busca simular de forma muy básica a un "Reproducir" por medio de un mensaje que lo indica. */
@@ -268,11 +268,10 @@ public:
         Node* temp = head;
         while (temp != nullptr) {
             std::cout << "Reproduciendo la canción: ";
-            
             temp->data.info();
             temp = temp->next;
-        }
-    }
+        };
+    };
 
     /* Este son los aviones, y la playlist son las torres gemelas.
     De nuevo temporal nos ayuda a recorrer la lista, en este caso para
@@ -286,6 +285,129 @@ public:
         }
     }
 };
+
+class CircularPlaylist : public Playlist {
+private:
+    struct Node {
+        Song data;
+        Node* next;
+        Node* prev;
+        Node(const Song& _data) : data(_data), next(nullptr), prev(nullptr) {}
+    };
+
+    Node* head;
+    int size;
+
+public:
+    CircularPlaylist() : head(nullptr), size(0) {}
+
+    bool isEmpty() const { return head == nullptr; };
+
+    bool inSongBank(std::string song, const SongBank& sb) {
+        for (int i = 0; i < sb.getSongs().size(); i++) {
+            if (song == sb.getSongs()[i].getName())
+                return true;
+        };
+        return false;
+    }
+
+    void addSong(const Song& song, const SongBank& sb) {
+        if (!inSongBank(song.getName(), sb)) {
+            std::cout << "La canción no se encuentra en el banco indicado\n";
+            return;
+        }
+
+        Node* newNode = new Node(song);
+        if (isEmpty()) {
+            head = newNode;
+            head->next = head;
+            head->prev = head;
+        } else {
+            Node* tail = head->prev;
+            tail->next = newNode;
+            newNode->prev = tail;
+            newNode->next = head;
+            head->prev = newNode;
+        }
+
+        size++;
+        std::cout << "Se añadió '" << song.getName() << "' a la playlist circular.\n";
+    }
+
+    void showPlaylist() const {
+        if (isEmpty()) {
+            std::cout << "La playlist está vacía.\n";
+            return;
+        };
+
+        Node* temp = head;
+        int i = 1;
+        do {
+            std::cout << i++ << ". ";
+            temp->data.info();
+            temp = temp->next;
+        } while (temp != head);
+    };
+
+    void goForward(const std::string& name) const {
+        if (isEmpty()) return;
+
+        Node* temp = head;
+        do {
+            if (temp->data.getName() == name) {
+                std::cout << "Siguiente canción:\n";
+                temp->next->data.info();
+                return;
+            };
+            temp = temp->next;
+        } while (temp != head);
+
+        std::cout << "No se encontró la canción '" << name << "'.\n";
+    };
+
+    void goBack(const std::string& name) const {
+        if (isEmpty()) return;
+
+        Node* temp = head;
+        do {
+            if (temp->data.getName() == name) {
+                std::cout << "Canción anterior:\n";
+                temp->prev->data.info();
+                return;
+            };
+            temp = temp->next;
+        } while (temp != head);
+
+        std::cout << "No se encontró la canción '" << name << "'.\n";
+    };
+
+    void playAll() const {
+        if (isEmpty()) {
+            std::cout << "No hay canciones para reproducir.\n";
+            return;
+        };
+
+        Node* temp = head;
+        do {
+            std::cout << "Reproduciendo: ";
+            temp->data.info();
+            temp = temp->next;
+        } while (temp != head);
+    };
+
+    ~CircularPlaylist() {
+        if (isEmpty()) return;
+
+        Node* temp = head->next;
+        while (temp != head) {
+            Node* nextNode = temp->next;
+            delete temp;
+            temp = nextNode;
+        };
+        delete head;
+    };
+};
+
 
 
 int main() {
@@ -316,4 +438,5 @@ int main() {
 
     return 0;
 }
+
 
