@@ -32,7 +32,7 @@ pacman -S mingw-w64-x86_64-glew mingw-w64-x86_64-opengl
 4. Instalar el .zip de Imgui, el cual se encuentra en la web
 5. Dentro de Visual Studio Code, usar el comando (Ctrl + Shft + Ñ) Para abrir la terminal.
 6. Usar el comando para compilar los archivos (Verificar que no haya otro  .exe)
-7. 
 ```
 
 ```
+7. Ejecutar el codigo .\music_gui.exe o music_gui.exe
