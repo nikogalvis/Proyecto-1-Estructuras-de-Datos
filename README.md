@@ -13,107 +13,26 @@ Se opta el proyecto de un pseudoreproductor de musica, que imite la interfaz de 
 
 #include "imgui.h" //*Incluye los archivos referentes a IMGUI, la libreria que permite interfaces graficas*/
 #include "backends/imgui_impl_glfw.h" //*Conecta con la librería de GLFW, la cual permite la interacción con los distintos
-inputs de teclado y mouse, además de permitir crear ventanas
-*/
+inputs de teclado y mouse, además de permitir crear ventanas/
 #include "backends/imgui_impl_opengl3.h" //*Conecta Imgui con OpenGl, Este es el API de los graficos/
 
 ```
+### Instalaciones previas
+Hemos tenido varios problemas de compatibilidad, por lo tanto se dejara la lista de requisitos que nos han servido para que el programa corra
 
-## Clase Song
-Se parte de una clase "Song", siendo esta la base del programa, añadimos los atributos que consideramos pertinentes para la aplicación, de forma privada, puesto que no queremos que el usuario cambie estos atributos. Se definen los getters para poder ver esta información de manera individual. Por ultimo, se le añade el metodo "info" para poder ver la información de la canción, de manera organizada. 
-
-``` C++
-class Song{
-
-  private:
-    std::string name;
-    std::string artist;
-    int duration; //? La duración la plantee para que sean segundos.
-  
-  public:
-
-  //* Constructor, getters, no son necesarios los setters puesto que uno no cambia el contenido de la canción */
-  Song(std::string _name, std::string _artist, int _duration, std::string _genre){
-    name = _name;
-    artist = _artist;
-    duration = _duration;
-    genre = _genre;
-  };
-
-  std::string getName() const{
-    return name;
-  };
-
-  std::string getArtist() const{
-    return artist;
-  };
-
-  int getDuration() const{
-    return duration;
-  };
-
-  std::string getGenre() const{
-    return genre;
-  };
-
-  //* Este es el equivalente del __str__ creo, para que lo veamos en prints*/
-  //También puede ser útil para llevar el hilo de hasta donde funciona todo si ocurre algo inesperado
-  void info() const{
-    std::cout<<"Name: "<< name << ", Author(s): " << artist << ", Genre: "<< genre << std::endl;
-  };
-
-};
-
-``` 
-
-Una vez se define esta clase, se empieza a crear la clase "SongBank", un arreglo dinamico que contiene todas las canciones que la aplicación puede reproducir. Se inicia haciendo uso de la biblioteca <vector>, la cual actua como un arreglo dinamico, y hacemos uso de ella para dar el atributo "songs". De forma privada, creamos dos metodos que permitan, añadir una canción, y otro que permita borrar canciones por nombre., como es un arreglo dinamico, el espacio consumido se ajusta en la misma medida en la que se añaden/borran canciones (Aunque no estamos seguros si tiene la mejora del numero aureo)
-
-Además, se le añade un metodo para que organice las canciones alfabeticamente, lo que facilita la busqueda de las mismas, por ultimo un metodo que permite observar todo el banco de canciones.
+1. Compilador g++, version 15.2.0 (Usando MinGW-w64)
+2. Definir el Path de Variables de Entorno en Windows 
+3. Compiladores de GLFW, OPENGL y GLEW.
 
 ``` C++
-class SongBank{
-  private:
-    std::vector<Song> songs;
+pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-glfw
+pacman -S mingw-w64-x86_64-glew mingw-w64-x86_64-opengl
+```
 
-  public:
-    
-  SongBank(std::vector<Song> _songs){
-    songs = _songs;
-  };
-
-  void addSong(const Song& new_song){
-    songs.push_back(new_song);
-  };
-
-  void deleteSong(std::string song){
-    for(int i = 0; i < songs.size(); i++)
-      if(songs[i].getName() == song){
-        songs.erase(songs.begin() + i);
-        std::cout << "Se elimino la cancion" << song << std::endl;  
-          break;
-      }
-  };
-
-  void sortByName(){
-    std::sort(songs.begin(), songs.end(),
-        [](const Song& a, const Song& b) {
-            return a.getName() < b.getName();
-        });
-  };
-
-  void showSongs() const{
-    if (songs.empty()) {
-      std::cout << "There's no songs";
-      return;
-    }
-
-    for (int i = 0; i < songs.size(); i++){
-      std::cout << i + 1 << " // ";
-      songs[i].info();
-    };
-    
-  };
-};
-
+4. Instalar el .zip de Imgui, el cual se encuentra en la web
+5. Dentro de Visual Studio Code, usar el comando (Ctrl + Shft + Ñ) Para abrir la terminal.
+6. Usar el comando para compilar los archivos (Verificar que no haya otro  .exe)
+7. 
+```
 
 ```
