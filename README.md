@@ -25,8 +25,7 @@ Hemos tenido varios problemas de compatibilidad, por lo tanto se dejara la lista
 3. Compiladores de GLFW, OPENGL y GLEW.
 
 ``` C++
-pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-glfw
-pacman -S mingw-w64-x86_64-glew mingw-w64-x86_64-opengl
+pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-glfw mingw-w64-x86_64-glew
 ```
 
 4. Instalar el .zip de Imgui, el cual se encuentra en la web
