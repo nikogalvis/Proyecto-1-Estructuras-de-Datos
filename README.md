@@ -34,4 +34,5 @@ pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-glfw mingw-w64-x86_64-glew
 ```
 
 ```
-7. Ejecutar el codigo .\music_gui.exe o music_gui.exe
+
+### 
