@@ -1,14 +1,14 @@
 # Proyecto-1-Estructuras-de-Datos (Simulador reproductor de Musica)
-Simulador de un reproductor de musica que use arreglos, listas, pilas y colas.
+Simulador de un reproductor de musica que use arreglos, colas, y colas circulares.
 
 ### Información Previa
-Se opta por recrear una aplicacion de reproduccion de canciones ya dadas por el sistema, es decir, canciones guardadas internamente en el dispositivo en el que se reproduce, siendo este programa una aproximación a Lark Player, más que a spotify u otras aplicaciones que funcionan por medio de internet.
+Se opta el proyecto de un pseudoreproductor de musica, que imite la interfaz de un reproductor de musica, con funciones de almacenamiento de arreglo dinamico, mantener una playlist con una lista encandenada, y simular su recorrido en una Cola Circular, dado que en una playlist al llegar a la ultima canción, vuelve al inicio. 
 
 ### Librerias Usadas (Rectifiquemos esto constantemente negros)
 ``` C++
 #include <iostream> 
 #include <vector> //* Es un arreglo dinamico que tiene c++ por default*/
-#include <algorithm>
+#include <algorithm> //* Esta libreria tiene como funcionalidad organizar arreglos*/
 ```
 
 ## Clase Song
