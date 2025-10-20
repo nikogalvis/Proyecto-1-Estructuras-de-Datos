@@ -6,9 +6,17 @@ Se opta el proyecto de un pseudoreproductor de musica, que imite la interfaz de 
 
 ### Librerias Usadas (Rectifiquemos esto constantemente negros)
 ``` C++
-#include <iostream> 
+#include <iostream> //*Permite las operaciones de [input/output] */
 #include <vector> //* Es un arreglo dinamico que tiene c++ por default*/
 #include <algorithm> //* Esta libreria tiene como funcionalidad organizar arreglos*/
+#include <string> //* Funcionalidad de la clase string (std::string)*/
+
+#include "imgui.h" //*Incluye los archivos referentes a IMGUI, la libreria que permite interfaces graficas*/
+#include "backends/imgui_impl_glfw.h" //*Conecta con la librería de GLFW, la cual permite la interacción con los distintos
+inputs de teclado y mouse, además de permitir crear ventanas
+*/
+#include "backends/imgui_impl_opengl3.h" //*Conecta Imgui con OpenGl, Este es el API de los graficos/
+
 ```
 
 ## Clase Song
