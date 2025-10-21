@@ -29,10 +29,12 @@ pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-glfw mingw-w64-x86_64-glew
 ```
 
 4. Instalar el .zip de Imgui, el cual se encuentra en la web
-5. Dentro de Visual Studio Code, usar el comando (Ctrl + Shft + Ñ) Para abrir la terminal.
-6. Usar el comando para compilar los archivos (Verificar que no haya otro  .exe)
+5. Dentro de Visual Studio Code, asegurarse que se este compilando con la ruta del MingW64
+6. Dentro de Visual Studio Code, usar el comando (Ctrl + Shft + Ñ) Para abrir la terminal.
+7. Usar el comando para compilar los archivos (Verificar que no haya otro  .exe)
 ```
-
+g++ src/*.cpp imgui/*.cpp imgui/backends/*.cpp -Iinclude -Iimgui -Iimgui/backends -lglfw3 -lopengl32 -lgdi32 -o music_gui.exe
 ```
+Con esto queda Todo el programa instalado
 
 ### 
