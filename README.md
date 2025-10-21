@@ -5,7 +5,7 @@ Simulador de un reproductor de musica que use arreglos, colas, y colas circulare
 Se opta el proyecto de un pseudoreproductor de musica, que imite la interfaz de un reproductor de musica, con funciones de almacenamiento de arreglo dinamico, mantener una playlist con una lista doblemente encandenada, y simular su recorrido en una Cola Circular, dado que en una playlist al llegar a la ultima canción, vuelve al inicio. 
 
 ### Características
-
+El programa permite al usuario crear un banco con las canciones que prefiera especificando sus características. Luego puede crear una playlist, visualizarla y modificar su contenido, además de avanzar o retroceder entre canciones al reproducirse.
 
 ### Librerias Usadas (Rectifiquemos esto constantemente negros)
 ``` C++
@@ -40,4 +40,43 @@ g++ src/*.cpp imgui/*.cpp imgui/backends/*.cpp -Iinclude -Iimgui -Iimgui/backend
 ```
 Con esto queda Todo el programa instalado
 
-### 
+### Uso del programa
+Las instrucciones para el correcto manejo de este reproductor están indicadas en el Manual de Usuario correspondiente, disponible dentro de este mismo repositorio.
+
+### Estructura
+El proyecto ha sido desarrollado con la siguiente estructura:
+
+MusicReproductor
+* imgui
+** backends
+*** imgui_impl_glfw.cpp
+*** imgui_impl_glfw.h
+*** imgui_impl_opengl3.cpp
+*** imgui_impl_opengl3.h
+** imconfig.h
+** imgui.cpp
+** imgui.h
+** imgui_draw.cpp
+** imgui_impl_opengl3_loader.h
+** imgui_internal.h
+** imgui_tables.cpp
+** imgui_widgets.cpp
+** imstb_rectpack.h
+** imstb_textedit.h
+** imstb_truetype.h
+* include
+** CircularPlaylist.h
+** Playlist.h
+** Song.h
+** SongBank.h
+** gui.h
+* src
+** CircularPlaylist.cpp
+** Playlist.cpp
+** Song.cpp
+** SongBank.cpp
+** g++
+** gui.cpp
+** main_imgui.cpp
+* imgui.ini
+* music_gui.exe
