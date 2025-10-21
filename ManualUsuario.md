@@ -8,13 +8,17 @@ Hemos tenido varios problemas de compatibilidad, por lo tanto se dejara la lista
 
 1. Compilador g++, version 15.2.0 (Usando MinGW-w64)
 2. Definir el Path _"C:\msys64\mingw64\bin"_ de Variables de Entorno en Windows 
-3. Compiladores de GLFW, OPENGL y GLEW.
+3. Compiladores de GLFW, OPENGL y GLEW. (En la terminal Mingw64)
+
+_(El compilador OPENGL viene dentro de el propio Windows)_
 
 ``` C++
 pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-glfw mingw-w64-x86_64-glew
 ```
 
 4. Instalar el .zip de Imgui, el cual se encuentra en la web
+-"_https://github.com/ocornut/imgui_"
+
 5. Descargar esta carpeta, para un correcto funcionamiento posicionarse en la carpeta MusicReproductor
 6. Dentro de Visual Studio Code, asegurarse que se este compilando con la ruta del MingW64
 7. Dentro de Visual Studio Code, usar el comando (Ctrl + Shft + Ñ) Para abrir la terminal.
