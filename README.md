@@ -4,6 +4,14 @@ Simulador de un reproductor de musica que use arreglos, colas, y colas circulare
 ### Información Previa
 Se opta el proyecto de un pseudoreproductor de musica, que imite la interfaz de un reproductor de musica, con funciones de almacenamiento de arreglo dinamico, mantener una playlist con una lista doblemente encandenada, y simular su recorrido en una Cola Circular, dado que en una playlist al llegar a la ultima canción, vuelve al inicio. 
 
+#### ¿Por qué estas estructuras?
+Se decidió por llevar a cabo un reproductor de música debido a que evidenciamos una posible implementación de estas tres estructuras de forma no muy compleja, además que uno de los autores es usuario de una app de este tipo, entonces era útil dados sus conocimientos al respecto. En cuanto a las estructuras seleccionadas, se implementaron ya que eran las más apropiadas para cada propósito (arreglo dinámico para el banco de canciones, cola para la visualización de la playlist, y cola circular para la reproducción de la misma en bucle).
+
+#### ¿Cómo se usaron?
+* Se implementó por medio de std::vector<Song> songs; la estructura "arreglo dinámico", en este caso de instancias del tipo Song, permitiendo crecer o reducir su tamaño y gestionan la memoria de forma automática
+* Se implementó dentro de la clase Playlist la estructura "Cola (Queue)" por medio de una lista doblemente encadenada con una cabeza definida, para establecer el orden en que se reproducirán las canciones
+* Se implementó dentro de la clase CircularPlaylist la estructura "Cola circular (Circular Queue)" por medio de otra lista doblemente encadenada pero que además asigna apuntadores de modo que la primera canción es próxima a la última, para almacenar las canciones presentes en Playlist y simular la reproducción.
+
 ### Características
 El programa permite al usuario crear un banco con las canciones que prefiera especificando sus características. Luego puede crear una playlist, visualizarla y modificar su contenido, además de avanzar o retroceder entre canciones al reproducirse.
 
