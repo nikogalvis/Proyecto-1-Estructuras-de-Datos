@@ -46,7 +46,7 @@ Las instrucciones para el correcto manejo de este reproductor están indicadas e
 ### Estructura
 El proyecto ha sido desarrollado con la siguiente estructura:
 
-MusicReproductor
+####MusicReproductor
 * imgui
   * backends
     * imgui_impl_glfw.cpp
@@ -80,3 +80,16 @@ MusicReproductor
   * main_imgui.cpp
 * imgui.ini
 * music_gui.exe
+
+#### Descripción
+* imgui ayuda dando soporte a la interfaz del programa
+* include contiene los headers necesarios, en dónde se encuentran cada uno de los "¿Qué?" de cada método
+* src contiene los archivo de C++ que indican los "¿Cómo?" de dichos métodos
+* imgui.ini se utiliza para guardar la configuración de las interfaz entre ejecuciones del programa
+* music_gui.exe es el archivo ejecutable listo para ser utilizado por el usuario
+
+### Créditos
+* **Nicolás Steven Galvis Ordóñez**
+* **Andrés Arturo Lozano Olivares**
+* **Angel Santiago Flórez Rozo**
+*Estudiantes de Ingeniería de Sistemas y Computación, Universidad Nacional de Colombia*
