@@ -92,4 +92,5 @@ El proyecto ha sido desarrollado con la siguiente estructura:
 * **Nicolás Steven Galvis Ordóñez**
 * **Andrés Arturo Lozano Olivares**
 * **Angel Santiago Flórez Rozo**
+  
 *Estudiantes de Ingeniería de Sistemas y Computación, Universidad Nacional de Colombia*
