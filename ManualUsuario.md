@@ -43,6 +43,19 @@ Se abrira la ventana que se muestra en la imagen, con un SongBank predeterminado
 <img width="801" height="642" alt="Captura de pantalla 2025-10-20 214353" src="https://github.com/user-attachments/assets/b3d69ce0-015b-46aa-962f-cd3bad2fa648" />
 
 Una vez presionado este boton, se abriran dos campos, uno que muestra el Banco de Canciones con todas las canciones disponibles, y un apartado para agregar canciones que el usuario quiera.
-Las canciones del SongBank se pueden agregar a la Playlist, o eliminar del banco de canciones, mientras que en el apartado de canciones, hay un unico boton para agregarla al Banco de Canciones _[Para agregar una cancion se requiere de llenar los 4 campos, de lo contrario saltara un mensaje de error]_
+Las canciones del SongBank se pueden agregar a la Playlist, o eliminar del banco de canciones, mientras que en el apartado de canciones, hay un unico boton para agregarla al Banco de Canciones **_[Para agregar una cancion se requiere de llenar los 4 campos, de lo contrario saltara un mensaje de error]_**
+
+
+### Ejemplo de agregado de cancion
+
+<img width="804" height="644" alt="Captura de pantalla 2025-10-20 214903" src="https://github.com/user-attachments/assets/41f097e1-3632-41ee-a8c1-43e17aa2b5e2" />
+
+_Ejemplo de una cancion siendo añadida al SongBank_
+
+Una vez se llenan los campos de la canción, se oprime el boton de agregar a la Playlist, lo cual permitira su paso por el reproductor de musica, para visualizar la playlist, se usa el boton de "Mostrar Playlist", lo que nos lleva
+
+
+
+
 
 
