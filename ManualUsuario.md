@@ -2,7 +2,7 @@
 A continuación se muestran las instrucciones de uso del programa diseñado.
 
 ## Requisitos
-Aunque estos ya esten explicados en el README, se vuelven a aclarar aqui, puesto que son necesarios para el correcto funcionamiento de la aplicación
+Aunque estos ya estén explicados en el README, se vuelven a aclarar aquí, puesto que son necesarios para el correcto funcionamiento de la aplicación
 
 Hemos tenido varios problemas de compatibilidad, por lo tanto se dejará la lista de requisitos que nos han servido para que el programa corra:
 
