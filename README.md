@@ -15,7 +15,7 @@ Se decidió por llevar a cabo un reproductor de música debido a que evidenciamo
 ### Características
 El programa permite al usuario crear un banco con las canciones que prefiera especificando sus características. Luego puede crear una playlist, visualizarla y modificar su contenido, además de avanzar o retroceder entre canciones al reproducirse.
 
-### Librerias Usadas (Rectifiquemos esto constantemente negros)
+### Librerías Usadas
 ``` C++
 #include <iostream> //*Permite las operaciones de [input/output] */
 #include <vector> //* Es un arreglo dinamico que tiene c++ por default*/
