@@ -52,9 +52,14 @@ Las canciones del SongBank se pueden agregar a la Playlist, o eliminar del banco
 
 _Ejemplo de una cancion siendo añadida al SongBank_
 
-Una vez se llenan los campos de la canción, se oprime el boton de agregar a la Playlist, lo cual permitira su paso por el reproductor de musica, para visualizar la playlist, se usa el boton de "Mostrar Playlist", lo que nos lleva
+Una vez se llenan los campos de la canción, se oprime el boton de agregar al SongBank, lo cual permitira} agregarlo a la Playlist, para visualizar la playlist, se usa el boton de "Mostrar Playlist", lo que nos deja ver que canciones hemos añadido a la misma.
 
 
+<img width="797" height="639" alt="Captura de pantalla 2025-10-20 221737" src="https://github.com/user-attachments/assets/2d425778-394b-4874-8376-27491c02573a" />
+
+De esta manera se ve la playlist, sabiendo que canciones se pueden reproducir en la CircularPlaylist, la Playlist se implemento como lista por la facilidad que tiene para eliminar y agregar canciones, de forma rapida.
+
+Por  ultimo, los botones de cancion siguiente y cancion anterior, para funcionar, se debe hallar en la Playlist la cancion que se esta reproduciendo actualmente, a partir de ahi, cualquier  cancion que agregues será recorrible, y  cuando llegues a la ultima, volveras a la primera cancion de la Playlist
 
 
 
