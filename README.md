@@ -48,35 +48,35 @@ El proyecto ha sido desarrollado con la siguiente estructura:
 
 MusicReproductor
 * imgui
-** backends
-*** imgui_impl_glfw.cpp
-*** imgui_impl_glfw.h
-*** imgui_impl_opengl3.cpp
-*** imgui_impl_opengl3.h
-** imconfig.h
-** imgui.cpp
-** imgui.h
-** imgui_draw.cpp
-** imgui_impl_opengl3_loader.h
-** imgui_internal.h
-** imgui_tables.cpp
-** imgui_widgets.cpp
-** imstb_rectpack.h
-** imstb_textedit.h
-** imstb_truetype.h
+  * backends
+    * imgui_impl_glfw.cpp
+    * imgui_impl_glfw.h
+    * imgui_impl_opengl3.cpp
+    * imgui_impl_opengl3.h
+  * imconfig.h
+  * imgui.cpp
+  * imgui.h
+  * imgui_draw.cpp
+  * imgui_impl_opengl3_loader.h
+  * imgui_internal.h
+  * imgui_tables.cpp
+  * imgui_widgets.cpp
+  * imstb_rectpack.h
+  * imstb_textedit.h
+  * imstb_truetype.h
 * include
-** CircularPlaylist.h
-** Playlist.h
-** Song.h
-** SongBank.h
-** gui.h
+  * CircularPlaylist.h
+  * Playlist.h
+  * Song.h
+  * SongBank.h
+  * gui.h
 * src
-** CircularPlaylist.cpp
-** Playlist.cpp
-** Song.cpp
-** SongBank.cpp
-** g++
-** gui.cpp
-** main_imgui.cpp
+  * CircularPlaylist.cpp
+  * Playlist.cpp
+  * Song.cpp
+  * SongBank.cpp
+  * g++
+  * gui.cpp
+  * main_imgui.cpp
 * imgui.ini
 * music_gui.exe
