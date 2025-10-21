@@ -46,7 +46,7 @@ Las instrucciones para el correcto manejo de este reproductor están indicadas e
 ### Estructura
 El proyecto ha sido desarrollado con la siguiente estructura:
 
-####MusicReproductor
+#### MusicReproductor
 * imgui
   * backends
     * imgui_impl_glfw.cpp
